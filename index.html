@@ -2,10 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>List Box</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-tablet.css">
+    <link rel="stylesheet" href="style-phone.css">
 </head>
 <body>
+<div class="listBox">
+    <h1>List Box</h1>
+    <div id="form">
+        <p id="text_input"></p>
+        <form id="textBox">
+            <input type="text" name="inputPair" placeholder="Name=Value">
+            <button class="buttons">Add</button>
+        </form>
+    </div>
+    <p id="text_target"></p>
+    <div class="listBoxArea">
+        <div class="textArea">
+            <ul class="listForEl"></ul>
+        </div>
+        <div class="buttonsDiv">
+            <button class="buttons" id="buttonSortName">Sort by Name</button>
+            <button class="buttons" id="buttonSortValue">Sort by Value</button>
+            <button class="buttons" id="buttonDelete">Delete</button>
+        </div>
+    </div>
+</div>
 <script src="main.js"></script>
-
 </body>
 </html>
