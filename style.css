@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.listBox{
+    margin: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+input{
+    width: 100px;
+    height: 25px;
+}
+#textBox{
+    display: flex;
+    gap: 160px;
+}
+
+#text_target{
+    margin-top: 20px;
+}
+.textArea{
+    width: 250px;
+    height: 300px;
+    display: flex;
+    border: 1px solid black;
+}
+.listBoxArea{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+.buttonsDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+#buttonDelete{
+    margin-top: 10px;
+}
