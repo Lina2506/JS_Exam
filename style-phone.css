@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+    .listBox {
+        width: 343px;
+        padding: 20px 0;
+        gap: 40px;
+    }
+    #form{
+        flex-wrap: wrap;
+    }
+   #textBox{
+      flex-wrap: wrap;
+       gap: 20px;
+   }
+   .textArea{
+       width: 400px;
+   }
+}
