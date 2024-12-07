@@ -9,6 +9,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    font-size: 35px;
 }
 #form{
     margin-top: 20px;
@@ -16,20 +17,21 @@
     flex-direction: column;
 }
 input{
-    width: 100px;
-    height: 25px;
+    width: 200px;
+    height: 35px;
+    font-size: 30px;
 }
 #textBox{
     display: flex;
-    gap: 160px;
+    gap: 410px;
 }
 
 #text_target{
     margin-top: 20px;
 }
 .textArea{
-    width: 250px;
-    height: 300px;
+    width: 550px;
+    height: 600px;
     display: flex;
     border: 1px solid black;
 }
@@ -38,7 +40,13 @@ input{
     flex-wrap: wrap;
     gap: 60px;
 }
+.buttons{
+    height: 30px;
+    font-size: 20px;
+
+}
 .buttonsDiv{
+    object-fit: cover;
     display: flex;
     flex-direction: column;
     gap: 10px;
