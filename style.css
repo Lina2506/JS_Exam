@@ -40,6 +40,9 @@ input{
     display: flex;
     border: 1px solid black;
 }
+.listForEl{
+    list-style-type: none;
+}
 .listBoxArea{
     display: flex;
     flex-wrap: wrap;
