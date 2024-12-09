@@ -18,27 +18,34 @@ form.onsubmit = function (ev) {
 
     const nameValue = this.inputPair.value;
     const nameValueStr  = `${nameValue}`;
-    const pairSplit = nameValueStr.split('=', 2);
+    const pairSplit = nameValueStr.trim().split('=', 2);
     let nameOfPair = pairSplit[0];
     let valueOfPair = pairSplit[1];
+        if (valueOfPair === undefined) {
+            return '';
+        }
+
     let obj = {nameOfPair, valueOfPair};
 
     const listEl = document.createElement("li");
     listEl.innerText = obj.nameOfPair +'='+ obj.valueOfPair;
 
     listForEl.appendChild(listEl);
-    listEl.classList.add(nameValue);
+    listEl.classList.add('listElements');
 
     elementsArr.push(listEl);
     form.reset();
 
 };
 const buttonSortName = document.getElementById('buttonSortName');
-let listE = listForEl.getElementsByTagName('li');
-console.log(listE)
+let ulList = document.getElementsByClassName('listElements');
+for (const ulListElement of ulList) {
+    console.log(ulList)
+}
+console.log(ulList)
 buttonSortName.onclick = function (ev) {
     ev.preventDefault();
-    listE.sort((a, b) => {
+    ulList.sort((a, b) => {
         if (a.nameOfPair > b.nameOfPair) {
             return 1;
         }
@@ -53,7 +60,7 @@ buttonSortName.onclick = function (ev) {
 
 const buttonSortValue = document.getElementById('buttonSortValue');
 buttonSortValue.onclick=function (){
-    elementsArr.sort((a,b) => {
+    ulList.sort((a,b) => {
         if (a.valueOfPair>b.valueOfPair){
             return 1;
         }
@@ -67,7 +74,6 @@ buttonSortValue.onclick=function (){
 };
 
 
-const list = document.getElementsByName('listEl')
-buttonDeleteList.onclick=function() {
-    list.remove();
-}
+buttonDeleteList.onclick = function () {
+    listForEl.remove();
+};
