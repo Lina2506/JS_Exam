@@ -40,7 +40,7 @@ form.onsubmit = function (ev) {
 const buttonSortName = document.getElementById('buttonSortName');
 let ulList = document.getElementsByClassName('listElements');
 for (const ulListElement of ulList) {
-    console.log(ulList)
+    console.log(ulList);
 }
 console.log(ulList)
 buttonSortName.onclick = function (ev) {
