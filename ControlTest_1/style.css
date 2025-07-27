@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+}
+.w-1440{
+    width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.key {
+    font-weight: bolder;
+}
+/*_________________________index.html_________________________*/
+.users {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 60px;
+    justify-content: center;
+}
+.userDiv {
+    width: 60%;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid lightgray;
+    background-color: ghostwhite;
+    border-radius: 8px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+.user-card p {
+    margin: 6px 0;
+    font-size: 16px;
+}
+
+.viewMore {
+    margin-top: 10px;
+    color: mediumseagreen;
+    border-color: lightgrey;
+}
+
+/*______________________________user-details_______________________*/
+.postButton{
+    display: block;
+    margin: 20px auto;
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: mediumseagreen;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.posts{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+.post{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: ghostwhite;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+.post a {
+    display: flex;
+    color: mediumseagreen;
+    font-weight: bold;
+    text-decoration: underline;
+}
+/*_____________________________post-details_________________________*/
+.info{
+    width: 60%;
+    padding: 20px;
+    background-color: ghostwhite;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+.comments{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px;
+}
+.comment{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background-color: ghostwhite;
+}
+.comment h4 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.comment i {
+    color: gray;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.comment p {
+    margin: 0;
+    font-size: 15px;
+}
