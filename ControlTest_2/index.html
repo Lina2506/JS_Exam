@@ -2,35 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>List Box</title>
+    <title>Name/Value Pairs</title>
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/style-tablet.css">
     <link rel="stylesheet" href="CSS/style-phone.css">
 </head>
 <body>
 <div class="listBox">
-    <h1>List Box</h1>
-    <div id="form">
-        <p id="text_input"></p>
-        <form id="textBox">
-            <label>
-                <input type="text" name="inputPair" placeholder="Name=Value">
-            </label>
-            <button class="buttons">Add</button>
+    <h1>Name/Value Pair List</h1>
+
+        <form id="pairForm">
+            <input type="text" id="inputPair" placeholder="Name=Value">
+            <button class="buttons" type="submit">Add</button>
         </form>
-    </div>
-    <p id="text_target"></p>
-    <div class="listBoxArea">
-        <div class="textArea">
-            <ul class="listForEl"></ul>
-        </div>
+
         <div class="buttonsDiv">
             <button class="buttons" id="buttonSortName">Sort by Name</button>
             <button class="buttons" id="buttonSortValue">Sort by Value</button>
             <button class="buttons" id="buttonDelete">Delete</button>
         </div>
-    </div>
+    <ul id="pairList">Name/Value Pair List</ul>
 </div>
+
 <script src="main.js"></script>
 </body>
 </html>
