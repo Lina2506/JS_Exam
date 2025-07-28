@@ -9,21 +9,28 @@
 </head>
 <body>
 <div class="listBox">
-    <h1>Name/Value Pair List</h1>
-
-        <form id="pairForm">
-            <input type="text" id="inputPair" placeholder="Name=Value">
+    <h1>List Box</h1>
+    <div id="form">
+        <p id="text_input"></p>
+        <form id="textBox">
+            <label>
+                <input type="text" name="inputPair" placeholder="Name=Value">
+            </label>
             <button class="buttons" type="submit">Add</button>
         </form>
-
-        <div class="buttonsDiv">
-            <button class="buttons" id="buttonSortName">Sort by Name</button>
-            <button class="buttons" id="buttonSortValue">Sort by Value</button>
-            <button class="buttons" id="buttonDelete">Delete</button>
+    </div>
+    <p id="text_target"></p>
+    <div class="listBoxArea">
+        <div class="textArea">
+            <ul class="listForEl"></ul>
         </div>
-    <ul id="pairList">Name/Value Pair List</ul>
+        <div class="buttonsDiv">
+            <button type="submit" class="buttons" id="buttonSortName">Sort by Name</button>
+            <button type="submit" class="buttons" id="buttonSortValue">Sort by Value</button>
+            <button type="submit" class="buttons" id="buttonDelete">Delete</button>
+        </div>
+    </div>
 </div>
-
 <script src="main.js"></script>
 </body>
 </html>

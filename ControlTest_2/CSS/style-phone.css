@@ -1,17 +1,26 @@
 @media screen and (max-width: 768px) {
     .listBox {
-        width: 343px;
-        padding: 20px 0;
-        gap: 40px;
+        padding: 20px;
     }
-    #form{
+
+    h1 {
+        font-size: 24px;
+    }
+
+    input {
+        font-size: 16px;
+    }
+
+    .listElements {
+        font-size: 16px;
+    }
+
+    .buttonsDiv {
+        flex-direction: row;
+        justify-content: center;
         flex-wrap: wrap;
     }
-   #textBox{
-      flex-wrap: wrap;
-       gap: 20px;
-   }
-   .textArea{
-       width: 400px;
-   }
+    #buttonDelete{
+        margin-top: 0;
+    }
 }

@@ -4,61 +4,97 @@
     box-sizing: border-box;
     text-decoration: none;
 }
-.listBox{
-    margin-left: 30px;
-    height: 100vh;
+body {
+    background-color: lightskyblue;
     display: flex;
-    flex-direction: column;
-    font-size: 45px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.listBox{
+    width: 100%;
+    max-width: 1440px;
+    background-color: white;
+    padding: 40px 50px;
 }
 .listBox,h1{
     margin-bottom: 50px;
-    margin-top: 50px;
     font-size: 35px;
 }
 #form{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    gap: 10px;
+    margin-bottom: 70px;
+}
+#text_input{
+    font-size: 25px;
 }
 input{
-    width: 400px;
-    height: 35px;
+    width: 100%;
+    max-width: 500px;
+    height: 40px;
     font-size: 30px;
+    border: none;
 }
 #textBox{
     display: flex;
-    gap: 660px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-right: 240px;
+    gap: 20px;
 }
 
 #text_target{
     margin-top: 20px;
+    font-size: 25px;
 }
 .textArea{
-    width: 1000px;
-    height: 800px;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 700px;
     display: flex;
-    border: 1px solid black;
+    border: none;
+    flex-direction: column;
 }
 .listForEl{
     list-style-type: none;
+    padding-left: 0;
+}
+.listElements {
+    font-size: 35px;
+    padding: 5px 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+.listElements:hover{
+    background-color: lightskyblue;
 }
 .listBoxArea{
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 30px;
 }
 .buttons{
-    height: 30px;
-    font-size: 20px;
-
+    height: 35px;
+    font-size: 16px;
+    padding: 0 15px;
+    cursor: pointer;
+    border: solid 2px lightgray;
+    border-radius: 4px;
+}
+.buttons:hover {
+    background-color: lightskyblue;
 }
 .buttonsDiv{
-    object-fit: cover;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 #buttonDelete{
     margin-top: 10px;
+}
+.listElements.selected {
+    background-color: indianred;
 }

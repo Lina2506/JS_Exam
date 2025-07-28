@@ -1,8 +1,6 @@
 document.getElementById('text_input').innerText = 'Name/Value Pair';
 document.getElementById('text_target').innerText = 'Name/Value Pair List';
 
-
-
 const form = document.getElementById('textBox');
 const listForEl = document.querySelector('.listForEl');
 
