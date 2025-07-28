@@ -4,76 +4,73 @@ document.getElementById('text_target').innerText = 'Name/Value Pair List';
 
 
 const form = document.getElementById('textBox');
-const listForEl = document.getElementsByClassName('listForEl')[0];
-const buttonDeleteList = document.getElementById('buttonDelete');
+const listForEl = document.querySelector('.listForEl');
 
-
-let elementsArr  = [];
-
-console.log(elementsArr);
-
+let elementsArr  = JSON.parse(localStorage.getItem('elementsArr'))||[];
+renderList();
 
 form.onsubmit = function (ev) {
     ev.preventDefault();
 
-    const nameValue = this.inputPair.value;
-    const nameValueStr  = `${nameValue}`;
-    const pairSplit = nameValueStr.trim().split('=', 2);
-    let nameOfPair = pairSplit[0];
-    let valueOfPair = pairSplit[1];
-        if (valueOfPair === undefined) {
-            return '';
-        }
+    const nameValue = this.inputPair.value.trim();
+    const pairSplit = nameValue.split('=', 2);
 
-    let obj = {nameOfPair, valueOfPair};
+    if(pairSplit.length < 2) return;
 
-    const listEl = document.createElement("li");
-    listEl.innerText = obj.nameOfPair +'='+ obj.valueOfPair;
+    let nameOfPair = pairSplit[0].trim();
+    let valueOfPair = pairSplit[1].trim();
 
-    listForEl.appendChild(listEl);
-    listEl.classList.add('listElements');
+    const regex=/^[a-zA-Z0-9_]+$/;
 
-    elementsArr.push(listEl);
+    if (!nameOfPair || !valueOfPair || !regex.test(nameOfPair) || !regex.test(valueOfPair))  {
+        alert("contain only alpha-numeric characters");
+        return;
+    }
+
+    elementsArr.push({ name: nameOfPair, value:valueOfPair });
+    localStorage.setItem('elementsArr', JSON.stringify(elementsArr));
+
+    renderList();
     form.reset();
+};
 
-};
-const buttonSortName = document.getElementById('buttonSortName');
-let ulList = document.getElementsByClassName('listElements');
-for (const ulListElement of ulList) {
-    console.log(ulList);
-}
-console.log(ulList)
-buttonSortName.onclick = function (ev) {
-    ev.preventDefault();
-    ulList.sort((a, b) => {
-        if (a.nameOfPair > b.nameOfPair) {
-            return 1;
+function renderList() {
+    listForEl.innerHTML = '';
+    elementsArr.forEach((pair, index) => {
+        const li = document.createElement('li');
+        li.className = 'listElements';
+        li.innerText=`${pair.name}=${pair.value}`;
+        li.dataset.index = index;
+
+        li.onclick = function (e) {
+            li.classList.toggle('selected');
         }
-        if (a.nameOfPair < b.nameOfPair) {
-            return -1;
-        }
-        if (a.nameOfPair === b.nameOfPair) {
-            return 0;
-        }
+
+        listForEl.appendChild(li);
     });
-};
+}
+const buttonSortName = document.getElementById('buttonSortName');
+buttonSortName.onclick=function (){
+    elementsArr.sort((a,b) => a.name.localeCompare(b.name));
+    localStorage.setItem('elementsArr', JSON.stringify(elementsArr));
+    renderList();
+}
 
 const buttonSortValue = document.getElementById('buttonSortValue');
 buttonSortValue.onclick=function (){
-    ulList.sort((a,b) => {
-        if (a.valueOfPair>b.valueOfPair){
-            return 1;
-        }
-        if (a.valueOfPair<b.valueOfPair){
-            return -1;
-        }
-        if (a.valueOfPair===b.valueOfPair){
-            return 0;
-        }
-    });
+    elementsArr.sort((a,b) => a.value.localeCompare(b.value));
+    localStorage.setItem('elementsArr', JSON.stringify(elementsArr));
+    renderList();
 };
 
+const buttonDeleteList = document.getElementById('buttonDelete');
 
 buttonDeleteList.onclick = function () {
-    listForEl.remove();
+    const selectedList = document.querySelectorAll('.listElements.selected');
+    const selectedIndexes=Array.from(selectedList).map(li=>+li.dataset.index);
+
+
+    elementsArr= elementsArr.filter((_,index)=>!selectedIndexes.includes(index));
+    localStorage.setItem('elementsArr', JSON.stringify(elementsArr));
+    renderList();
 };
