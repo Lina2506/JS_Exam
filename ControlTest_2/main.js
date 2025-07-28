@@ -40,9 +40,9 @@ function renderList() {
         const li = document.createElement('li');
         li.className = 'listElements';
         li.innerText=`${pair.name}=${pair.value}`;
-        li.dataset.index = index;
+        li.dataset.index = index.toString();
 
-        li.onclick = function (e) {
+        li.onclick = function () {
             li.classList.toggle('selected');
         }
 
