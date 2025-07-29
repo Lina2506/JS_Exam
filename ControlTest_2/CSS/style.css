@@ -21,7 +21,7 @@ body {
     margin-bottom: 50px;
     font-size: 35px;
 }
-#form{
+#formWrapper{
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -40,10 +40,9 @@ input{
 }
 #textBox{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
-    margin-right: 240px;
-    gap: 20px;
+    gap: 718px;
 }
 
 #text_target{
@@ -78,11 +77,12 @@ input{
 }
 .buttons{
     height: 35px;
-    font-size: 16px;
+    font-size: 20px;
     padding: 0 15px;
     cursor: pointer;
-    border: solid 2px lightgray;
+    border: solid 1px gray;
     border-radius: 4px;
+    background: linear-gradient(to bottom, #ffffff, #cccaca);
 }
 .buttons:hover {
     background-color: lightskyblue;
