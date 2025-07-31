@@ -5,7 +5,7 @@
     }
     #textBox {
         justify-content: flex-start;
-        gap: 2px;
+        gap: 20px;
     }
     h1 {
         font-size: 24px;
